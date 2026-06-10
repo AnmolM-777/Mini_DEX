@@ -1,5 +1,13 @@
 # MiniDEX 🪙
 
+[![Solidity](https://img.shields.io/badge/Solidity-%23363636.svg?style=for-the-badge&logo=solidity&logoColor=white)](https://soliditylang.org/)
+[![Hardhat](https://img.shields.io/badge/Hardhat-%23F7E025.svg?style=for-the-badge&logo=hardhat&logoColor=black)](https://hardhat.org/)
+[![Ethers.js](https://img.shields.io/badge/Ethers.js-blue?style=for-the-badge)](https://ethers.org/)
+[![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/typescript-%23007acc.svg?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![DeFi](https://img.shields.io/badge/DeFi-purple?style=for-the-badge)](https://en.wikipedia.org/wiki/Decentralized_finance)
+[![Web3](https://img.shields.io/badge/Web3-orange?style=for-the-badge)](https://web3.foundation/)
+
 MiniDEX is a premium, high-fidelity Web3 Decentralized Exchange (DEX) and Automated Market Maker (AMM) designed around the constant product formula ($x \cdot y = k$), reminiscent of Uniswap V2. The application integrates Solidity smart contracts, a comprehensive Hardhat testing harness, and a luxurious glassmorphism React + TypeScript Single Page Application (SPA).
 
 ---
@@ -13,6 +21,22 @@ MiniDEX is a premium, high-fidelity Web3 Decentralized Exchange (DEX) and Automa
 *   **Integrated Coin Faucet**: Instantly claim 100.0 units of test `TKA` (Token A) and `TKB` (Token B) for testing and pool initialization.
 *   **Proportional Liquidity Mining**: Deposit dual-sided assets in perfect proportions (respecting the reserve pool ratio) to mint Liquidity Provider (`MDX-LP`) tokens, and burn LP tokens to withdraw assets along with accumulated fees.
 *   **Luxurious UI/UX**: Stunning cyber dark theme with smooth glassmorphic card grids, subtle glow states, micro-animations, and a completely responsive custom SVG line chart mapping live exchange rates without external graphing libraries.
+
+---
+
+## 📸 Application Screenshots
+
+### 1. Token Swap Dashboard
+A sleek, glowing glassmorphic interface showing Token Swap with neon accent colors and real-time custom SVG rate charts.
+![Swap Dashboard](docs/images/swap_page.png)
+
+### 2. Liquidity Pool Management
+An intuitive dual-asset supply interface showing active pool shares, LP token minting details, and dual-side asset supply balances.
+![Liquidity Pool](docs/images/liquidity_page.png)
+
+### 3. Test Coin Faucet
+Claim test tokens (TKA and TKB) instantly to seed new pools or test exchange functionalities.
+![Faucet Interface](docs/images/faucet_page.png)
 
 ---
 

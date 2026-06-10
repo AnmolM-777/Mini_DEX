@@ -2,6 +2,18 @@
   "name": "mini-dex-monorepo",
   "version": "1.0.0",
   "private": true,
+  "keywords": [
+    "solidity",
+    "hardhat",
+    "react",
+    "typescript",
+    "ethers",
+    "defi",
+    "dex",
+    "amm",
+    "constant-product",
+    "web3"
+  ],
   "scripts": {
     "compile": "npx hardhat compile",
     "test": "npx hardhat test",

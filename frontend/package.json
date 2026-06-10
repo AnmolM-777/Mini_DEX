@@ -3,6 +3,14 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "keywords": [
+    "react",
+    "typescript",
+    "vite",
+    "ethers",
+    "glassmorphism",
+    "defi-dashboard"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

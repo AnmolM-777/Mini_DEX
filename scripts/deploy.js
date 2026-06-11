@@ -58,10 +58,19 @@ async function main() {
   const tokenArtifact = JSON.parse(fs.readFileSync(tokenArtifactPath, "utf8"));
   const dexPoolArtifact = JSON.parse(fs.readFileSync(dexPoolArtifactPath, "utf8"));
 
+  const network = await ethers.provider.getNetwork();
+  const chainId = Number(network.chainId);
+  let networkName = "localhost";
+  if (chainId === 34) {
+    networkName = "securechain";
+  } else if (chainId !== 31337) {
+    networkName = network.name || `chain-${chainId}`;
+  }
+
   const dataToSave = {
     network: {
-      chainId: 31337,
-      name: "localhost"
+      chainId: chainId,
+      name: networkName
     },
     tokenA: {
       address: tokenAAddress,
@@ -97,6 +106,9 @@ export const CONTRACT_ABIS = {
   tokenB: deployedContracts.tokenB.abi,
   dexPool: deployedContracts.dexPool.abi
 };
+
+export const SUPPORTED_CHAIN_ID = deployedContracts.network?.chainId || 31337;
+export const SUPPORTED_CHAIN_NAME = deployedContracts.network?.name || "localhost";
 `;
 
   fs.writeFileSync(path.join(frontendContractsDir, "index.ts"), helperTs);

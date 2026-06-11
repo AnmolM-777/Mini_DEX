@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { ethers } from "ethers";
-import { CONTRACT_ADDRESSES, CONTRACT_ABIS } from "../contracts";
+import { CONTRACT_ADDRESSES, CONTRACT_ABIS, SUPPORTED_CHAIN_ID, SUPPORTED_CHAIN_NAME } from "../contracts";
 
 declare global {
   interface Window {
@@ -97,7 +97,7 @@ export const Web3Provider: React.FC<{ children: React.ReactNode }> = ({ children
       setTxHistory(state.txHistory);
       setWalletAddress("0xSimulatorUserWalletAddress777");
       setWalletConnected(true);
-      setChainId(31337); // Simulated local chain ID
+      setChainId(SUPPORTED_CHAIN_ID); // Simulated local chain ID
     } else {
       // Switch back to Ethers Web3 logic
       setWalletConnected(false);
@@ -165,8 +165,8 @@ export const Web3Provider: React.FC<{ children: React.ReactNode }> = ({ children
       setWalletConnected(true);
       setIsSimulator(false); // Exit simulator mode
 
-      if (cId !== 31337) {
-        alert("Please switch your MetaMask network to Localhost 8545 (Chain ID: 31337) to interact with smart contracts!");
+      if (cId !== SUPPORTED_CHAIN_ID) {
+        alert(`Please switch your MetaMask network to ${SUPPORTED_CHAIN_NAME === "securechain" ? "SCAI Mainnet (Chain ID: 34)" : `Localhost 8545 (Chain ID: ${SUPPORTED_CHAIN_ID})`} to interact with smart contracts!`);
       }
 
       await fetchWeb3Data(accounts[0], provider);
@@ -189,7 +189,7 @@ export const Web3Provider: React.FC<{ children: React.ReactNode }> = ({ children
   const fetchWeb3Data = async (userAddress: string, provider: ethers.BrowserProvider) => {
     try {
       const network = await provider.getNetwork();
-      if (Number(network.chainId) !== 31337) return;
+      if (Number(network.chainId) !== SUPPORTED_CHAIN_ID) return;
 
       const signer = await provider.getSigner();
 
@@ -342,7 +342,7 @@ export const Web3Provider: React.FC<{ children: React.ReactNode }> = ({ children
     } else {
       // Web3 execution
       try {
-        if (!walletAddress || chainId !== 31337) return false;
+        if (!walletAddress || chainId !== SUPPORTED_CHAIN_ID) return false;
         const provider = new ethers.BrowserProvider(window.ethereum);
         const signer = await provider.getSigner();
 
@@ -423,7 +423,7 @@ export const Web3Provider: React.FC<{ children: React.ReactNode }> = ({ children
     } else {
       // Web3 execution
       try {
-        if (!walletAddress || chainId !== 31337) return false;
+        if (!walletAddress || chainId !== SUPPORTED_CHAIN_ID) return false;
         const provider = new ethers.BrowserProvider(window.ethereum);
         const signer = await provider.getSigner();
 
@@ -507,7 +507,7 @@ export const Web3Provider: React.FC<{ children: React.ReactNode }> = ({ children
     } else {
       // Web3 execution
       try {
-        if (!walletAddress || chainId !== 31337) return false;
+        if (!walletAddress || chainId !== SUPPORTED_CHAIN_ID) return false;
         const provider = new ethers.BrowserProvider(window.ethereum);
         const signer = await provider.getSigner();
 
@@ -583,7 +583,7 @@ export const Web3Provider: React.FC<{ children: React.ReactNode }> = ({ children
     } else {
       // Web3 execution
       try {
-        if (!walletAddress || chainId !== 31337) return false;
+        if (!walletAddress || chainId !== SUPPORTED_CHAIN_ID) return false;
         const provider = new ethers.BrowserProvider(window.ethereum);
         const signer = await provider.getSigner();
 

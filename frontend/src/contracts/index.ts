@@ -12,3 +12,6 @@ export const CONTRACT_ABIS = {
   tokenB: deployedContracts.tokenB.abi,
   dexPool: deployedContracts.dexPool.abi
 };
+
+export const SUPPORTED_CHAIN_ID = (deployedContracts as any).network?.chainId || 31337;
+export const SUPPORTED_CHAIN_NAME = (deployedContracts as any).network?.name || "localhost";

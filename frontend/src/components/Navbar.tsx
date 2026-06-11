@@ -1,5 +1,6 @@
 import React from "react";
 import { useWeb3 } from "../context/Web3Context";
+import { SUPPORTED_CHAIN_ID, SUPPORTED_CHAIN_NAME } from "../contracts";
 
 interface NavbarProps {
   activeTab: string;
@@ -124,10 +125,10 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
             <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "var(--accent)" }} />
             Sandbox
           </span>
-        ) : walletConnected && chainId === 31337 ? (
+        ) : walletConnected && chainId === SUPPORTED_CHAIN_ID ? (
           <span className="glowing-badge success">
             <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "var(--success)" }} />
-            Hardhat Node
+            {SUPPORTED_CHAIN_NAME === "securechain" ? "SCAI Mainnet" : "Hardhat Node"}
           </span>
         ) : walletConnected ? (
           <span className="glowing-badge warning">

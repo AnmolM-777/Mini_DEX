@@ -48,8 +48,15 @@ const MainApp: React.FC = () => {
         color: "var(--text-dark)",
         borderTop: "1px solid var(--border-glass)",
         background: "rgba(8, 10, 16, 0.5)",
-        backdropFilter: "blur(8px)"
+        backdropFilter: "blur(8px)",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center"
       }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "8px", justifyContent: "center", marginBottom: "12px" }}>
+          <span style={{ color: "var(--text-muted)", fontSize: "13px" }}>Supported by</span>
+          <img src="/ether_authority_logo.png" alt="Ether Authority Logo" style={{ height: "22px", objectFit: "contain" }} />
+        </div>
         <div style={{ display: "flex", justifyContent: "center", gap: "16px", marginBottom: "8px" }}>
           <a
             href="https://github.com/AnmolM-777/Mini_DEX"

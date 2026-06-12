@@ -37,9 +37,15 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
       borderLeft: "none",
       borderRight: "none"
     }}>
-      <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-        <span style={{ fontSize: "28px" }}>🪙</span>
-        <h1 className="gradient-text" style={{ fontSize: "24px", margin: 0 }}>MiniDEX</h1>
+      <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <img src="/ether_authority_logo.png" alt="Ether Authority Logo" style={{ height: "32px", objectFit: "contain" }} />
+        </div>
+        <span style={{ color: "rgba(255, 255, 255, 0.15)", fontSize: "20px" }}>|</span>
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <span style={{ fontSize: "28px" }}>🪙</span>
+          <h1 className="gradient-text" style={{ fontSize: "24px", margin: 0 }}>MiniDEX</h1>
+        </div>
       </div>
 
       <nav style={{ display: "flex", gap: "8px" }}>
